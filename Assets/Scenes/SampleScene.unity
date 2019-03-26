@@ -1575,7 +1575,7 @@ MonoBehaviour:
   fighterPrefab: {fileID: 5524477041282564756, guid: 5102c343c1a0cad468bdf261e0a627c7,
     type: 3}
   target1: {fileID: 748959471}
-  target2: {fileID: 748959471}
+  target2: {fileID: 947435939}
   target3: {fileID: 1606550179}
 --- !u!54 &1363778835
 Rigidbody:
