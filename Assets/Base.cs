@@ -66,23 +66,28 @@ public class Base : MonoBehaviour
                 ship.AddComponent<Seek>().targetGameObject = target1;
 
 
+                //Ran out of time.. heres a description
+
                 //Component trigger = target1.GetComponent<CapsuleCollider>().;
                 //ON Trigger enter - Shoot bullets at Base
+                //Instanciate bullet prefabs and seek bullet at the enemy base 7 times for the bullets
                 //Then
+
+
                 /*
-                Destroy(ship.GetComponent<Seek>());
-                ship.AddComponent<Seek>().targetGameObject = this;
-                if(tiberium > 7)
-                {
-                    tiberium -= 7;
                     Destroy(ship.GetComponent<Seek>());
-                    
-                    sendship()
-                }
-                else{
-                    Destroy(ship);
-                }
-                */
+                    ship.AddComponent<Seek>().targetGameObject = this;
+                    if(tiberium > 7)
+                    {
+                        tiberium -= 7;
+                        Destroy(ship.GetComponent<Seek>());
+
+                        sendship()
+                    }
+                    else{
+                        Destroy(ship);
+                    }
+                    */
 
             }
             else if (TargPick == 2)
@@ -99,23 +104,27 @@ public class Base : MonoBehaviour
                 ship.AddComponent<Seek>();
                 ship.GetComponent<Seek>().targetGameObject = target2;
 
+                //Ran out of time.. heres a description
+
                 //Component trigger = target1.GetComponent<CapsuleCollider>().;
                 //ON Trigger enter - Shoot bullets at Base
                 //Then
+
+
                 /*
-                Destroy(ship.GetComponent<Seek>());
-                ship.AddComponent<Seek>().targetGameObject = this;
-                if(tiberium > 7)
-                {
-                    tiberium -= 7;
                     Destroy(ship.GetComponent<Seek>());
-                    
-                    sendship()
-                }
-                else{
-                    Destroy(ship);
-                }
-                */
+                    ship.AddComponent<Seek>().targetGameObject = this;
+                    if(tiberium > 7)
+                    {
+                        tiberium -= 7;
+                        Destroy(ship.GetComponent<Seek>());
+
+                        sendship()
+                    }
+                    else{
+                        Destroy(ship);
+                    }
+                    */
             }
             else if (TargPick == 3)
             {
