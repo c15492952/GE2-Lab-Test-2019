@@ -43,7 +43,7 @@ public class Base : MonoBehaviour
             if (TargPick == 1)
             {
                 tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target1.transform.position, Vector3.up));
+                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target1.transform.position));
                 ship.AddComponent<Renderer>();
                 shiprend = ship.GetComponent<Renderer>();
                 shiprend.material.color = teamColor;
@@ -56,7 +56,7 @@ public class Base : MonoBehaviour
             else if(TargPick == 2)
             {
                 tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target1.transform.position, Vector3.up));
+                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target2.transform.position));
                 ship.AddComponent<Renderer>();
                 shiprend = ship.GetComponent<Renderer>();
                 shiprend.material.color = teamColor;
@@ -69,7 +69,7 @@ public class Base : MonoBehaviour
             else if(TargPick ==3)
             {
                 tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target1.transform.position, Vector3.up));
+                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target3.transform.position));
                 ship.AddComponent<Renderer>();
                 shiprend = ship.GetComponent<Renderer>();
                 shiprend.material.color = teamColor;
@@ -87,8 +87,8 @@ public class Base : MonoBehaviour
     {
         for(;;)
         {
-            tiberium += 1;
-            yield return new WaitForSeconds(1);
+            tiberium += 0.5f;
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
