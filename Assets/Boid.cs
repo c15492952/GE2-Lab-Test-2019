@@ -12,10 +12,10 @@ public class Boid : MonoBehaviour
     public float mass = 1;
 
     [Range(0.0f, 10.0f)]
-    public float damping = 0.01f;
+    public float damping = 0;
 
     [Range(0.0f, 1.0f)]
-    public float banking = 0.1f;
+    public float banking = 0;
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
 

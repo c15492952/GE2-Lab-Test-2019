@@ -34,53 +34,8 @@ public class Base : MonoBehaviour
     void Update()
     {
         text.text = "" + tiberium;
-        
-       
 
-        if(tiberium >= 10)
-        {
-            int TargPick = Random.Range(1, 3);
-            if (TargPick == 1)
-            {
-                tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target1.transform.position));
-                ship.AddComponent<Renderer>();
-                shiprend = ship.GetComponent<Renderer>();
-                shiprend.material.color = teamColor;
-
-                ship.AddComponent<Boid>();
-                ship.AddComponent<Arrive>();
-                ship.AddComponent<Seek>();
-                ship.GetComponent<Seek>().targetGameObject = target1;
-            }
-            else if(TargPick == 2)
-            {
-                tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target2.transform.position));
-                ship.AddComponent<Renderer>();
-                shiprend = ship.GetComponent<Renderer>();
-                shiprend.material.color = teamColor;
-
-                ship.AddComponent<Boid>();
-                ship.AddComponent<Arrive>();
-                ship.AddComponent<Seek>();
-                ship.GetComponent<Seek>().targetGameObject = target2;
-            }
-            else if(TargPick ==3)
-            {
-                tiberium -= 10;
-                GameObject ship = Instantiate(fighterPrefab, transform.position, Quaternion.LookRotation(target3.transform.position));
-                ship.AddComponent<Renderer>();
-                shiprend = ship.GetComponent<Renderer>();
-                shiprend.material.color = teamColor;
-
-                ship.AddComponent<Boid>();
-                ship.AddComponent<Arrive>();
-                ship.AddComponent<Seek>();
-                ship.GetComponent<Seek>().targetGameObject = target3;
-            }
-               
-        }
+        sendShip();        
     }
 
     IEnumerator AddTiberium()
@@ -89,6 +44,116 @@ public class Base : MonoBehaviour
         {
             tiberium += 0.5f;
             yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+
+    public void sendShip()
+    {
+        if (tiberium >= 10)
+        {
+            int TargPick = Random.Range(1, 3);
+            if (TargPick == 1)
+            {
+                tiberium -= 10;
+                GameObject ship = Instantiate(fighterPrefab, transform.position, transform.rotation);
+                ship.transform.LookAt(target1.transform.position);
+                ship.AddComponent<Renderer>();
+                shiprend = ship.GetComponent<Renderer>();
+                shiprend.material.color = teamColor;
+                ship.AddComponent<Boid>();
+                ship.AddComponent<Arrive>();
+                ship.AddComponent<Seek>().targetGameObject = target1;
+
+
+                //Component trigger = target1.GetComponent<CapsuleCollider>().;
+                //ON Trigger enter - Shoot bullets at Base
+                //Then
+                /*
+                Destroy(ship.GetComponent<Seek>());
+                ship.AddComponent<Seek>().targetGameObject = this;
+                if(tiberium > 7)
+                {
+                    tiberium -= 7;
+                    Destroy(ship.GetComponent<Seek>());
+                    
+                    sendship()
+                }
+                else{
+                    Destroy(ship);
+                }
+                */
+
+            }
+            else if (TargPick == 2)
+            {
+                tiberium -= 10;
+                GameObject ship = Instantiate(fighterPrefab, transform.position, transform.rotation);
+                ship.transform.LookAt(target2.transform.position);
+                ship.AddComponent<Renderer>();
+                shiprend = ship.GetComponent<Renderer>();
+                shiprend.material.color = teamColor;
+
+                ship.AddComponent<Boid>();
+                ship.AddComponent<Arrive>();
+                ship.AddComponent<Seek>();
+                ship.GetComponent<Seek>().targetGameObject = target2;
+
+                //Component trigger = target1.GetComponent<CapsuleCollider>().;
+                //ON Trigger enter - Shoot bullets at Base
+                //Then
+                /*
+                Destroy(ship.GetComponent<Seek>());
+                ship.AddComponent<Seek>().targetGameObject = this;
+                if(tiberium > 7)
+                {
+                    tiberium -= 7;
+                    Destroy(ship.GetComponent<Seek>());
+                    
+                    sendship()
+                }
+                else{
+                    Destroy(ship);
+                }
+                */
+            }
+            else if (TargPick == 3)
+            {
+                tiberium -= 10;
+                GameObject ship = Instantiate(fighterPrefab, transform.position, transform.rotation);
+                ship.transform.LookAt(target3.transform.position);
+                ship.AddComponent<Renderer>();
+                shiprend = ship.GetComponent<Renderer>();
+                shiprend.material.color = teamColor;
+
+                ship.AddComponent<Boid>();
+                ship.AddComponent<Arrive>();
+                ship.AddComponent<Seek>();
+                ship.GetComponent<Seek>().targetGameObject = target3;
+
+                //Ran out of time.. heres a description
+
+                //Component trigger = target1.GetComponent<CapsuleCollider>().;
+                //ON Trigger enter - Shoot bullets at Base
+                //Then
+                
+            
+            /*
+                Destroy(ship.GetComponent<Seek>());
+                ship.AddComponent<Seek>().targetGameObject = this;
+                if(tiberium > 7)
+                {
+                    tiberium -= 7;
+                    Destroy(ship.GetComponent<Seek>());
+                    
+                    sendship()
+                }
+                else{
+                    Destroy(ship);
+                }
+                */
+            }
+
         }
     }
 }
